@@ -29,35 +29,78 @@ namespace Practica_Areas
 
         private void btnCalcula1_Click(object sender, RoutedEventArgs e)
         {
-            float AlturaRe = float.Parse(txtAlturaRe.Text);
-            float BaseRe = float.Parse(txtBaseRe.Text);
-            float calculoUno = AlturaRe * BaseRe;
-            txtbArea1.Text = calculoUno.ToString();
+            //float AlturaRe = float.Parse(txtAlturaRe.Text);
+            //float BaseRe = float.Parse(txtBaseRe.Text);
+            //float calculoUno = AlturaRe * BaseRe;
+            //txtbArea1.Text = calculoUno.ToString();
         }
         private void btnCalcula2_Click(object sender, RoutedEventArgs e)
         {
-            float AlturaTri = float.Parse(txtAlturaTri.Text);
-            float BaseTri = float.Parse(txtBaseTri.Text);
-            float calculoDos = (AlturaTri * BaseTri) / 2;
-            txtbArea2.Text = calculoDos.ToString();
+            //float AlturaTri = float.Parse(txtAlturaTri.Text);
+            //float BaseTri = float.Parse(txtBaseTri.Text);
+            //float calculoDos = (AlturaTri * BaseTri) / 2;
+            //txtbArea2.Text = calculoDos.ToString();
 
         }
 
         private void btnCalcula3_Click(object sender, RoutedEventArgs e)
         {
-            float RadioC = float.Parse(txtRadio.Text);
-            float Pi = 3.1416F;
-            float calculoTres = Pi * (RadioC * RadioC);
-            txtbArea3.Text = calculoTres.ToString();
+            //float RadioC = float.Parse(txtRadio.Text);
+            //float Pi = 3.1416F;
+            //float calculoTres = Pi * (RadioC * RadioC);
+            //txtbArea3.Text = calculoTres.ToString();
         }
 
         private void btnCalcula4_Click(object sender, RoutedEventArgs e)
         {
-            float altura = float.Parse(txtAlturaT.Text);
-            float baseM = float.Parse(txtBaseMT.Text);
-            float basem = float.Parse(txtBasemT.Text);
-            float calculoCuatro = (altura * ((baseM * basem) / 2));
-            txtbArea4.Text = calculoCuatro.ToString();
+            //float altura = float.Parse(txtAlturaT.Text);
+            //float baseM = float.Parse(txtBaseMT.Text);
+            //float basem = float.Parse(txtBasemT.Text);
+            //float calculoCuatro = (altura * ((baseM * basem) / 2));
+            //txtbArea4.Text = calculoCuatro.ToString();
+        }
+
+        private void cbTipoFigura_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            PanelConfiguracion.Children.Clear();
+            switch (cbTipoFigura.SelectedIndex)
+            {
+                case 0://Rectangulo
+                    PanelConfiguracion.Children.Add(
+                        new ControlAreaRectangulo());
+                    break;
+
+                case 1://Triangulo
+                    PanelConfiguracion.Children.Add(new AreaTriangulo0());
+                    break;
+
+                case 2: //Circulo
+                    PanelConfiguracion.Children.Add(new Circulo());
+                    break;
+
+                case 3: //Trapecio
+                    PanelConfiguracion.Children.Add(new Trapecio());
+                    break;
+                default: break;
+            }
+        }
+
+        private void btnCalcula2_Click_1(object sender, RoutedEventArgs e)
+        {
+            double area = 0.0;
+            switch (cbTipoFigura.SelectedIndex)
+            {
+                case 0:
+
+                    break;
+                case 1:
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
+            }
+            lblResultadoArea.Text = area.ToString();
         }
     }
 }
