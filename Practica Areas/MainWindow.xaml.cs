@@ -64,10 +64,10 @@ namespace Practica_Areas
         {
             PanelConfiguracion.Children.Clear();
             switch (cbTipoFigura.SelectedIndex)
-            {
+            {   
                 case 0://Rectangulo
-                    PanelConfiguracion.Children.Add(
-                        new ControlAreaRectangulo());
+                 
+                    PanelConfiguracion.Children.Add(new ControlAreaRectangulo());
                     break;
 
                 case 1://Triangulo
@@ -91,11 +91,25 @@ namespace Practica_Areas
             switch (cbTipoFigura.SelectedIndex)
             {
                 case 0:
+                    var controlAreaRectangulo = (ControlAreaRectangulo)
+                    PanelConfiguracion.Children[0];
 
+                    float BaseRec = float.Parse(controlAreaRectangulo.txtBaseRe.Text);
+                    float AlturaRec = float.Parse(controlAreaRectangulo.txtAlturaRe.Text);
+                    area = BaseRec * AlturaRec;
                     break;
                 case 1:
+                    var controlAreatriangulo = (AreaTriangulo0)PanelConfiguracion.Children[0];
+                    
+                    break;
+                case 2:
+                    var controlAreacirculo = (Circulo)PanelConfiguracion.Children[0];
+
+                    float radio = float.Parse(controlAreacirculo.txtRadio.Text);
+                    area = 3.1416f * (radio * radio);
                     break;
                 case 3:
+
                     break;
                 default:
                     break;
